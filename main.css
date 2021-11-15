@@ -1,0 +1,33 @@
+.heading {
+    font-size: 4em;
+    color: #333;
+    height: 33vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.console-underscore {
+    display:inline-block;
+    position:relative;
+    top: -0.14em;
+    left: 10px;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.content {
+    margin: 0 5em;
+}
+
+.contact {
+    display: flex;
+    justify-content: space-around;
+}
+
+body {
+    background-color: #f3f3f3;
+    font-family: Consolas, monospace;
+}
