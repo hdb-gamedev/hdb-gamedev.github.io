@@ -3,11 +3,12 @@ const consoleText = (words, colors) => {
     let x = 1;
     let waiting = false;
     let target = document.getElementById("text")
+    let console = document.getElementById("console");
+    let visible = true;
     target.setAttribute("style", "color:" + colors[0])
     window.setInterval(() => {
         if (letterCount === 0 && waiting === false) {
             waiting = true;
-            target.innerHTML = words[0].substring(0, letterCount)
             window.setTimeout(() => {
                 var usedColor = colors.shift();
                 colors.push(usedColor);
@@ -26,13 +27,21 @@ const consoleText = (words, colors) => {
                 waiting = false;
             }, 1000)
         } else if (waiting === false) {
-            target.innerHTML = words[0].substring(0, letterCount)
-            letterCount += x;
+            if (x == 1) {
+                const letter = document.createTextNode(words[0].charAt(letterCount - 1));
+                target.insertBefore(letter, console);
+                letterCount++;
+            } else if (x == -1) {
+                const lastLetter = console.previousSibling;
+                if (lastLetter) {
+                    target.removeChild(lastLetter);
+                    letterCount--;
+                }
+            }
         }
     }, 120)
 
-    let console = document.getElementById("console");
-    let visible = true;
+
     window.setInterval(() => {
         if (visible === true) {
             console.className = "console-underscore hidden"
