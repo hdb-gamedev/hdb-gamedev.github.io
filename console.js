@@ -53,4 +53,4 @@ const consoleText = (words, colors) => {
     }, 400)
 }
 
-consoleText(["Darby Game Development Club", "Making Games", "Made with Love."], ["#444", "rebeccapurple", "lightblue"]);
+consoleText(["Darby Game Development Club", "Making Games", "Made with Love."], ["#444", "#478cbf", "#e87d0d"]);
