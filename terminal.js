@@ -1,9 +1,9 @@
-const consoleText = (words, colors) => {
+const terminalText = (words, colors) => {
     let letterCount = 1;
     let x = 1;
     let waiting = false;
     let target = document.getElementById("text")
-    let console = document.getElementById("console");
+    let terminal = document.getElementById("terminal");
     let visible = true;
     target.setAttribute("style", "color:" + colors[0])
     window.setInterval(() => {
@@ -29,10 +29,10 @@ const consoleText = (words, colors) => {
         } else if (waiting === false) {
             if (x == 1) {
                 const letter = document.createTextNode(words[0].charAt(letterCount - 1));
-                target.insertBefore(letter, console);
+                target.insertBefore(letter, terminal);
                 letterCount++;
             } else if (x == -1) {
-                const lastLetter = console.previousSibling;
+                const lastLetter = terminal.previousSibling;
                 if (lastLetter) {
                     target.removeChild(lastLetter);
                     letterCount--;
@@ -44,13 +44,13 @@ const consoleText = (words, colors) => {
 
     window.setInterval(() => {
         if (visible === true) {
-            console.className = "console-underscore hidden"
+            terminal.className = "terminal-underscore hidden"
             visible = false;
         } else {
-            console.className = "console-underscore"
+            terminal.className = "terminal-underscore"
             visible = true;
         }
     }, 400)
 }
 
-consoleText(["Darby Game Development Club", "Making Games", "Made with Love."], ["#444", "#478cbf", "#e87d0d"]);
+terminalText(["Darby Game Development Club", "Making Games", "Made with Love."], ["#444", "#478cbf", "#e87d0d"]);
