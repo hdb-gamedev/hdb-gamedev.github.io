@@ -43,7 +43,7 @@
     .contact {
         grid-auto-flow: column;
         grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: min-content min-content;
+        grid-template-rows: max-content max-content;
 
     }
 }
