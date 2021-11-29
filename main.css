@@ -67,3 +67,17 @@ body {
     background-color: #f3f3f3;
     font-family: Consolas, monospace;
 }
+
+.links {
+    display: grid;
+    gap: 2em;
+    margin-top: 2em;
+    justify-content: center;
+    grid-template-columns: max-content;
+}
+
+@media screen and (min-width: 600px) {
+    .links {
+        grid-template-columns: repeat(2, max-content);
+    }
+}
