@@ -2,7 +2,13 @@ const terminalText = (words, colors) => {
     let letterCount = 1;
     let x = 1;
     let waiting = false;
-    let target = document.getElementById("text")
+    let target = document.getElementById("text");
+    let sizer = document.getElementById("sizer");
+    let longest = "";
+    for (let w of words) {
+        if (w.length > longest.length) longest = w;
+    }
+    sizer.textContent = longest + "_";
     let terminal = document.getElementById("terminal");
     let visible = true;
     target.setAttribute("style", "color:" + colors[0])
