@@ -130,3 +130,7 @@ body {
     grid-column: 1 / 3;
 }
 
+.greek a {
+    text-decoration: none;
+    color: black;
+}
