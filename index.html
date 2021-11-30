@@ -40,24 +40,15 @@
         </div>
         <h2 class="groups-heading">Groups</h2>
         <div class="groups" id="groups">
-
+            <div class="group">
+                <div class="greek"><a href="https://github.com/hdb-gamedev/group-sigma">&Sigma;</a></div>
+                <a href="https://github.com/hdb-gamedev/group-sigma" class="github"><img src="github-logo.svg"></a>
+                <a href="https://hdb-gamedev.github.io/group-sigma" class="play"><img src="play-button.svg"></a>
+            </div>
         </div>
     </div>
     </div>
     <script src="terminal.js"></script>
-    <script>
-        let groups = document.getElementById("groups");
-        for (const letter of ["sigma", "psi"]) {
-            if (!/^[a-z]+$/.test(letter)) continue;
-            groups.innerHTML += `
-            <div class="group">
-                <div class="greek"><a href="https://github.com/hdb-gamedev/group-${letter}">&${letter[0].toUpperCase() + letter.slice(1)};</a></div>
-                <a href="https://github.com/hdb-gamedev/group-${letter}" class="github"><img src="github-logo.svg"></a>
-                <a href="https://hdb-gamedev.github.io/group-${letter}/" class="play"><img src="play-button.svg"></a>
-            </div>
-            `
-        }
-    </script>
 </body>
 
 </html>
