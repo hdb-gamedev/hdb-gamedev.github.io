@@ -39,31 +39,25 @@
             </a>
         </div>
         <h2 class="groups-heading">Groups</h2>
-        <div class="groups">
-            <div class="group">
-                <div class="greek">&Alpha;</div>
-                <a href="https://github.com/hdb-gamedev/group-alpha" class="github"><img src="github-logo.svg"></a>
-                <a href="https://hdb-gamedev.github.io/group-alpha/" class="play"><img src="play-button.svg"></a>
-            </div>
-            <div class="group">
-                <div class="greek">&Beta;</div>
-                <a href="https://github.com/hdb-gamedev/group-beta" class="github"><img src="github-logo.svg"></a>
-                <a href="https://hdb-gamedev.github.io/group-beta/" class="play"><img src="play-button.svg"></a>
-            </div>
-            <div class="group">
-                <div class="greek">&Gamma;</div>
-                <a href="https://github.com/hdb-gamedev/group-gamma" class="github"><img src="github-logo.svg"></a>
-                <a href="https://hdb-gamedev.github.io/group-gamma/" class="play"><img src="play-button.svg"></a>
-            </div>
-            <div class="group">
-                <div class="greek">&Delta;</div>
-                <a href="https://github.com/hdb-gamedev/group-delta" class="github"><img src="github-logo.svg"></a>
-                <a href="https://hdb-gamedev.github.io/group-delta/" class="play"><img src="play-button.svg"></a>
-            </div>
+        <div class="groups" id="groups">
+
         </div>
     </div>
     </div>
     <script src="terminal.js"></script>
+    <script>
+        let groups = document.getElementById("groups");
+        for (const letter of ["alpha", "beta", "delta", "gamma"]) {
+            if (!/^[a-z]+$/.test(letter)) continue;
+            groups.innerHTML += `
+            <div class="group">
+                <div class="greek">&${letter[0].toUpperCase() + letter.slice(1)};</div>
+                <a href="https://github.com/hdb-gamedev/group-${letter}" class="github"><img src="github-logo.svg"></a>
+                <a href="https://hdb-gamedev.github.io/group-${letter}/" class="play"><img src="play-button.svg"></a>
+            </div>
+            `
+        }
+    </script>
 </body>
 
 </html>
