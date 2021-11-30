@@ -16,6 +16,7 @@ body {
 
 #text, #sizer {
     max-width: 80vh;
+    padding: .5em;
 }
 
 #text {
